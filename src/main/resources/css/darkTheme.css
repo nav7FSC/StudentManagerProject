@@ -1,125 +1,124 @@
+/* Anchor Pane */
 .anchor_pane {
-    -fx-background-color: black;
+    -fx-background-color: #000000; /* Pure black background */
 }
 
+/* Button Styling */
 .db_btn {
-    -fx-background-color: #555;
-    -fx-radius: 2;
+    -fx-background-color: #1e90ff; /* Vibrant light blue */
     -fx-cursor: hand;
     -fx-font-family: "Arial";
-    -fx-font-size: 14px;
-    -fx-text-alignment: center;
-    -fx-text-fill: #d5d5d5;
+    -fx-font-size: 16px;
+    -fx-text-fill: #ffffff; /* Bright white text */
     -fx-alignment: CENTER;
-    -fx-background-radius: 10;
+    -fx-background-radius: 10; /* Rounded corners */
     -fx-pref-width: 200px;
-    -fx-pref-height: 40px;
-    -fx-text-fill: white;
+    -fx-pref-height: 50px;
+    -fx-effect: dropshadow(three-pass-box, rgba(30, 144, 255, 0.5), 5, 0, 0, 2);
 }
 
+/* Left Pane */
 .left_pane {
-    -fx-background-color: #313131;
-    -fx-pref-width: 130px;
+    -fx-background-color: #1b1b1b; /* Deep black-gray */
+    -fx-pref-width: 140px;
     -fx-pref-height: 600px;
-        -fx-text-fill: white;
+    -fx-border-color: #1e90ff; /* Light blue border for focus */
+    -fx-border-width: 2;
 }
 
+/* Admin Section */
 .admin_section {
-    -fx-background-color: #000000;
+    -fx-background-color: #121212; /* Slightly off-black */
 }
 
+/* Table Column Headers */
 .table_columns {
-    -fx-background-color: #171616;
-    -fx-text-fill: #e7e1e1;
+    -fx-background-color: #1e90ff; /* Light blue for headers */
+    -fx-text-fill: #ffffff; /* White text */
 }
 
-
-.menu_bar{
-    -fx-background-color: black;
+/* Menu Bar */
+.menu_bar {
+    -fx-background-color: #000000; /* Black for the main bar */
 }
 
-.menu_bar .label{
-    -fx-background-color: black;
-    -fx-font-size: 15 pt;
-        -fx-text-fill: white;
+.menu_bar .label {
+    -fx-font-size: 15px;
+    -fx-text-fill: #1e90ff; /* Light blue text */
 }
 
-.menu_options .label{
-    -fx-background-color: black;
-        -fx-text-fill: white;
+/* Menu Options */
+.menu_options .label {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+}
 
-}
-.menu_items{
-    -fx-background-color: black;
-}
+/* Text Field Pane */
 .text_field_pane {
-    -fx-background-color: #424242;
+    -fx-background-color: #1b1b1b; /* Deep gray */
 }
 
 .text_field {
-    -fx-background-color: black;
-    -fx-text-fill: white;
+    -fx-background-color: #121212; /* Black */
+    -fx-text-fill: #1e90ff; /* Light blue text */
+    -fx-border-color: #1e90ff; /* Border matching theme */
+    -fx-border-width: 1.5px;
 }
 
-
-
-.image_view{
-    -fx-background-color: black;
-    -fx-border-color: white;
+/* Image View */
+.image_view {
+    -fx-background-color: #000000; /* Black background */
+    -fx-border-color: #1e90ff; /* Light blue border */
     -fx-border-width: 2;
-    -fx-stroke: white;
 }
-.table-view:focused .table-row-cell:selected .table-cell {
-    -fx-background-color: lightBlue;
-    -fx-text-fill: grey;
-}
+
+/* Table View */
 .table-view .column-header,
 .table-view .column-header-background .filler {
-    -fx-background-color:  #6622CC;
+    -fx-background-color: #1e90ff; /* Light blue header */
 }
-.table-view .column-header .label{
-   -fx-text-fill: white;
-   -fx-font-weight: bold;
-   -fx-alignment: CENTER_LEFT;
-}
-.table-view .cell{
-   -fx-cell-size: 35;
-  -fx-alignment: center-left;
-  -fx-background-color: #444;
-  -fx-border-color: #29292D;
-  -fx-text-fill: lightgray;
-  -fx-alignment: CENTER_LEFT;
 
+.table-view .column-header .label {
+    -fx-text-fill: #ffffff; /* Bright white text */
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
 }
+
+.table-view .cell {
+    -fx-cell-size: 35;
+    -fx-alignment: center-left;
+    -fx-background-color: #121212; /* Deep black */
+    -fx-border-color: #292929; /* Subtle gray for cell borders */
+    -fx-text-fill: #e0e0e0; /* Soft white for text */
+}
+
 .table-row-cell:selected {
-   -fx-background-color: whitesmoke;
-   -fx-text-background-color:  #aa22CC;
+    -fx-background-color: #1e90ff; /* Vibrant blue for selection */
+    -fx-text-fill: #ffffff; /* White text for selected row */
 }
 
-/* scroll bar starts here */
-
-/* The increment and decrement button CSS class of scrollbar */
-.table-view .increment-button ,.table-view .decrement-button {
-    -fx-background-color:transparent;
-	-fx-background-radius: 2em;
-
+.table-view:focused .table-row-cell:selected .table-cell {
+    -fx-background-color: #4682b4; /* Softer blue on focus */
+    -fx-text-fill: #ffffff;
 }
 
-/* The main scrollbar **track** CSS class  */
+/* Scrollbar */
 .table-view .scroll-bar:horizontal .track,
-.table-view .scroll-bar:vertical .track{
-	-fx-background-color: transparent;
-	-fx-border-color:derive( #6622CC,80%);
-
-	-fx-background-radius: 2em;
-	-fx-border-radius:2em;
+.table-view .scroll-bar:vertical .track {
+    -fx-background-color: #1b1b1b; /* Match left pane */
+    -fx-border-color: #1e90ff; /* Light blue border for scroll track */
+    -fx-background-radius: 2em;
+    -fx-border-radius: 2em;
 }
 
-/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
 .table-view .scroll-bar:horizontal .thumb,
 .table-view .scroll-bar:vertical .thumb {
-    -fx-background-color:derive( #6622CC,90%);
-	-fx-background-insets: 2, 0, 0;
-	-fx-background-radius: 2em;
+    -fx-background-color: #1e90ff; /* Light blue scroll thumb */
+    -fx-background-radius: 2em;
+}
 
+/* General Enhancements */
+.menu_items {
+    -fx-background-color: #121212; /* Deep black */
+    -fx-text-fill: #1e90ff;
 }
