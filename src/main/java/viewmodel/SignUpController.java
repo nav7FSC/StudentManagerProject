@@ -64,7 +64,11 @@ public class SignUpController {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/view/login.fxml"));
             Scene scene = new Scene(root, 900, 600);
-            scene.getStylesheets().add(getClass().getResource("/css/lightTheme.css").toExternalForm());
+
+            // Apply the correct CSS (signup.css)
+            scene.getStylesheets().clear(); // Clear previous styles
+            scene.getStylesheets().add(getClass().getResource("/css/signup.css").toExternalForm()); // Add signup.css
+
             Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             window.setScene(scene);
             window.show();
@@ -72,4 +76,5 @@ public class SignUpController {
             e.printStackTrace();
         }
     }
+
 }
