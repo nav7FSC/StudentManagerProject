@@ -6,7 +6,11 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="365.0" prefWidth="511.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="viewmodel.SpalshScreenController">
+<VBox alignment="CENTER" prefHeight="365.0" prefWidth="511.0" spacing="20.0"
+      style="-fx-background-color: #264653;"
+      xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/17.0.2-ea"
+      fx:controller="viewmodel.SpalshScreenController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -19,13 +23,13 @@
         </ImageView>
 
         <!-- Loading Bar -->
-        <ProgressBar fx:id="loadingBar" prefWidth="400.0" progress="0.0" style="-fx-accent: darkblue;">
+        <ProgressBar fx:id="loadingBar" prefWidth="400.0" progress="0.0" style="-fx-accent: #e76f51;">
             <VBox.margin>
                 <Insets top="20.0" />
             </VBox.margin>
         </ProgressBar>
 
         <!-- Loading Label -->
-        <Label text="Loading Application..." style="-fx-font-size: 14px; -fx-font-family: Arial; -fx-text-fill: darkblue;" />
+        <Label text="Loading Application..." style="-fx-font-size: 14px; -fx-font-family: Arial; -fx-text-fill: #e76f51;" />
     </children>
 </VBox>
