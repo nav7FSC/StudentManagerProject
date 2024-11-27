@@ -13,31 +13,33 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-
-
 public class LoginController {
-
 
     @FXML
     private GridPane rootpane;
+
     public void initialize() {
+        // Set the background image for the rootpane
         rootpane.setBackground(new Background(
-                        createImage("https://edencoding.com/wp-content/uploads/2021/03/layer_06_1920x1080.png"),
-                        null,
-                        null,
-                        null,
-                        null,
-                        null
-                )
-        );
+                createImage("https://edencoding.com/wp-content/uploads/2021/03/layer_06_1920x1080.png"),
+                null,
+                null,
+                null,
+                null,
+                null
+        ));
 
+        // Add the login.css stylesheet to the rootpane
+        rootpane.getStylesheets().add(getClass().getResource("/css/login.css").toExternalForm());
 
+        // Fade-in transition for the rootpane
         rootpane.setOpacity(0);
         FadeTransition fadeOut2 = new FadeTransition(Duration.seconds(10), rootpane);
         fadeOut2.setFromValue(0);
         fadeOut2.setToValue(1);
         fadeOut2.play();
     }
+
     private static BackgroundImage createImage(String url) {
         return new BackgroundImage(
                 new Image(url),
@@ -45,11 +47,13 @@ public class LoginController {
                 new BackgroundPosition(Side.LEFT, 0, true, Side.BOTTOM, 0, true),
                 new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, true, true, false, true));
     }
+
     @FXML
     public void login(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/view/db_interface_gui.fxml"));
             Scene scene = new Scene(root, 900, 600);
+            // Add the lightTheme.css for the login scene
             scene.getStylesheets().add(getClass().getResource("/css/lightTheme.css").toExternalForm());
             Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             window.setScene(scene);
@@ -63,6 +67,7 @@ public class LoginController {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/view/signUp.fxml"));
             Scene scene = new Scene(root, 900, 600);
+            // Add the lightTheme.css for the signup scene
             scene.getStylesheets().add(getClass().getResource("/css/lightTheme.css").toExternalForm());
             Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             window.setScene(scene);
@@ -71,6 +76,4 @@ public class LoginController {
             e.printStackTrace();
         }
     }
-
-
 }
