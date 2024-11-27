@@ -1,0 +1,67 @@
+/* Background for the GridPane */
+.grid_pane {
+    -fx-background-color: #264653; /* Muted teal */
+    -fx-padding: 20px;
+}
+
+/* Title Label */
+.login_title {
+    -fx-font-family: "Arial Black";
+    -fx-text-fill: #2a9d8f; /* Deep greenish teal */
+    -fx-alignment: center;
+    -fx-border-color: #264653;
+    -fx-border-width: 2;
+    -fx-padding: 10px;
+}
+
+/* Text Field Styles */
+.login_text_field,
+.login_password_field {
+    -fx-background-color: #f4f1de; /* Cream */
+    -fx-border-color: #264653; /* Muted teal */
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+}
+
+/* Labels */
+.login_label {
+    -fx-font-family: "Arial Bold";
+    -fx-text-fill: #e76f51; /* Coral red */
+    -fx-alignment: center-right;
+    -fx-padding: 5px;
+}
+
+/* Buttons */
+.login_button {
+    -fx-background-color: #2a9d8f; /* Deep greenish teal */
+    -fx-text-fill: white;
+    -fx-font-family: "Arial";
+    -fx-font-size: 16px;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 40px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);
+    -fx-cursor: hand;
+}
+
+.login_button:hover {
+    -fx-background-color: #264653; /* Darker teal on hover */
+}
+
+.login_button:pressed {
+    -fx-background-color: #1d3557; /* Dark blue on press */
+}
+
+/* GridPane Row Alignment */
+VBox {
+    -fx-alignment: center;
+    -fx-spacing: 10px;
+}
+
+/* Fade-in Animation Compatibility */
+.rootpane {
+    -fx-opacity: 0; /* Starts at 0, transitions to 1 in controller */
+}
