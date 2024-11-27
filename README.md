@@ -25,3 +25,8 @@ The **Student Manager Project** is a JavaFX-based application designed to manage
 - **JavaFX**: GUI development.
 - **CSS**: For styling and themes.
 - **FXML**: Scene design and layout. 
+
+# Author
+
+• Nav Singh  
+GitHub: [nav7FSC](https://github.com/nav7FSC)
