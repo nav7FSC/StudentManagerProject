@@ -1,0 +1,88 @@
+/* Main Container */
+.signup-container {
+    -fx-background-color: #f4f1de; /* Soft cream */
+    -fx-border-color: #264653; /* Deep teal */
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-padding: 20;
+    -fx-spacing: 15;
+}
+
+/* Input Labels */
+.input-label {
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-text-fill: #264653; /* Deep teal */
+    -fx-font-weight: bold;
+}
+
+/* Text Fields */
+.text-field {
+    -fx-background-color: #ffffff; /* White background */
+    -fx-border-color: #264653; /* Deep teal border */
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-padding: 5;
+    -fx-pref-height: 30px;
+}
+
+.text-field:focused {
+    -fx-border-color: #2a9d8f; /* Bright teal on focus */
+    -fx-background-color: #f0f4f8; /* Subtle light gray */
+}
+
+/* Buttons */
+.db_btn {
+    -fx-background-color: #e76f51; /* Coral red */
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "Arial";
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 40px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.25), 4, 0, 0, 2);
+}
+
+.db_btn:hover {
+    -fx-background-color: #f4a261; /* Warm orange */
+}
+
+.db_btn:pressed {
+    -fx-background-color: #d35400; /* Darker orange */
+}
+
+/* Hint Text */
+.hint-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6c757d; /* Grayish text */
+    -fx-font-style: italic;
+}
+
+/* Status Label */
+.status-label {
+    -fx-font-family: "Arial";
+    -fx-font-size: 13px;
+    -fx-text-fill: #e63946; /* Soft red for errors */
+    -fx-font-weight: bold;
+}
+
+/* Hyperlink */
+.hyperlink {
+    -fx-text-fill: #2a9d8f; /* Bright teal */
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #264653; /* Deep teal */
+}
+
+/* HBox for Links */
+.hbox-links {
+    -fx-spacing: 5;
+    -fx-alignment: center;
+}
