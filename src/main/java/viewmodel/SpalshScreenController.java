@@ -18,7 +18,7 @@ public class SpalshScreenController {
         for (int i = 0; i <= 100; i++) {
             final double progress = i / 100.0; // Calculate progress percentage
             KeyFrame keyFrame = new KeyFrame(
-                    Duration.millis(i * 50), // 50ms per step, total 5 seconds
+                    Duration.millis(i * 35),
                     event -> loadingBar.setProgress(progress)
             );
             timeline.getKeyFrames().add(keyFrame);
