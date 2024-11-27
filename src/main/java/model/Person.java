@@ -4,29 +4,29 @@ public class Person {
     private Integer id;
     private String firstName;
     private String lastName;
-    private String department;
-    private String major;
+    private String typeOfLicense;
+    private String typeOfAircraft;
     private String email;
     private String imageURL;
 
     public Person() {
     }
 
-    public Person(String firstName, String lastName, String department, String major, String email,  String imageURL) {
+    public Person(String firstName, String lastName, String typeOfLicense, String typeOfAircraft, String email,  String imageURL) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.department = department;
-        this.major = major;
+        this.typeOfLicense = typeOfLicense;
+        this.typeOfAircraft = Person.this.typeOfAircraft;
         this.email = email;
         this.imageURL = imageURL;
     }
 
-    public Person(Integer id, String firstName, String lastName, String department, String major, String email,  String imageURL) {
+    public Person(Integer id, String firstName, String lastName, String typeOfLicense, String typeOfAircraft, String email,  String imageURL) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.department = department;
-        this.major = major;
+        this.typeOfLicense = typeOfLicense;
+        this.typeOfAircraft = Person.this.typeOfAircraft;
         this.email = email;
         this.imageURL = imageURL;
     }
@@ -66,21 +66,21 @@ public class Person {
     }
 
 
-    public String getMajor() {
-        return major;
+    public String getTypeOfLicense() {
+        return typeOfLicense;
     }
 
-    public void setMajor(String major) {
-        this.major = major;
+    public void setTypeOfLicense(String typeOfLicense) {
+        this.typeOfLicense = Person.this.typeOfLicense;
     }
 
 
-    public String getDepartment() {
-        return department;
+    public String getTypeOfAircraft() {
+        return typeOfAircraft;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
+    public void setTypeOfAircraft(String typeOfAircraft) {
+        this.typeOfAircraft = Person.this.typeOfAircraft;
     }
 
     public String getImageURL() {
@@ -97,8 +97,8 @@ public class Person {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", department='" + department + '\'' +
-                ", major='" + major + '\'' +
+                ", typeOfLicense='" + typeOfLicense + '\'' +
+                ", typeOfAircraft='" + typeOfAircraft + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }

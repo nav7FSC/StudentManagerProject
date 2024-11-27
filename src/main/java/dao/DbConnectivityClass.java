@@ -34,11 +34,11 @@ public class DbConnectivityClass {
                     int id = resultSet.getInt("id");
                     String first_name = resultSet.getString("first_name");
                     String last_name = resultSet.getString("last_name");
-                    String department = resultSet.getString("department");
-                    String major = resultSet.getString("major");
+                    String typeOfLicense = resultSet.getString("typeOfLicense");
+                    String typeOfAircraft = resultSet.getString("typeOfAircraft");
                     String email = resultSet.getString("email");
                     String imageURL = resultSet.getString("imageURL");
-                    data.add(new Person(id, first_name, last_name, department, major, email, imageURL));
+                    data.add(new Person(id, first_name, last_name, typeOfLicense, typeOfAircraft, email, imageURL));
                 }
                 preparedStatement.close();
                 conn.close();
@@ -67,8 +67,8 @@ public class DbConnectivityClass {
                 statement = conn.createStatement();
                 String sql = "CREATE TABLE IF NOT EXISTS users (" + "id INT( 10 ) NOT NULL PRIMARY KEY AUTO_INCREMENT,"
                         + "first_name VARCHAR(200) NOT NULL," + "last_name VARCHAR(200) NOT NULL,"
-                        + "department VARCHAR(200),"
-                        + "major VARCHAR(200),"
+                        + "typeOfLicense VARCHAR(200),"
+                        + "typeOfAircraft VARCHAR(200),"
                         + "email VARCHAR(200) NOT NULL UNIQUE,"
                         + "imageURL VARCHAR(200))";
                 statement.executeUpdate(sql);
@@ -108,11 +108,11 @@ public class DbConnectivityClass {
                     int id = resultSet.getInt("id");
                     String first_name = resultSet.getString("first_name");
                     String last_name = resultSet.getString("last_name");
-                    String major = resultSet.getString("major");
-                    String department = resultSet.getString("department");
+                    String typeOfAircraft = resultSet.getString("typeOfAircraft");
+                    String typeOfLicense = resultSet.getString("typeOfLicense");
 
                     lg.makeLog("ID: " + id + ", Name: " + first_name + " " + last_name + " "
-                            + ", Major: " + major + ", Department: " + department);
+                            + ", Type Of Aircraft: " + typeOfAircraft + ", Type of License: " + typeOfLicense);
                 }
                 preparedStatement.close();
                 conn.close();
@@ -134,12 +134,12 @@ public class DbConnectivityClass {
                     int id = resultSet.getInt("id");
                     String first_name = resultSet.getString("first_name");
                     String last_name = resultSet.getString("last_name");
-                    String department = resultSet.getString("department");
-                    String major = resultSet.getString("major");
+                    String typeOfLicense = resultSet.getString("typeOfLicense");
+                    String typeOfAircraft = resultSet.getString("typeOfAircraft");
                     String email = resultSet.getString("email");
 
                     lg.makeLog("ID: " + id + ", Name: " + first_name + " " + last_name + " "
-                            + ", Department: " + department + ", Major: " + major + ", Email: " + email);
+                            + ", Type of License: " + typeOfLicense + ", Type Of Aircraft: " + typeOfAircraft + ", Email: " + email);
                 }
 
                 preparedStatement.close();
@@ -153,12 +153,12 @@ public class DbConnectivityClass {
             connectToDatabase();
             try {
                 Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
-                String sql = "INSERT INTO users (first_name, last_name, department, major, email, imageURL) VALUES (?, ?, ?, ?, ?, ?)";
+                String sql = "INSERT INTO users (first_name, last_name, typeOfLicense, typeOfAircraft, email, imageURL) VALUES (?, ?, ?, ?, ?, ?)";
                 PreparedStatement preparedStatement = conn.prepareStatement(sql);
                 preparedStatement.setString(1, person.getFirstName());
                 preparedStatement.setString(2, person.getLastName());
-                preparedStatement.setString(3, person.getDepartment());
-                preparedStatement.setString(4, person.getMajor());
+                preparedStatement.setString(3, person.getTypeOfLicense());
+                preparedStatement.setString(4, person.getTypeOfAircraft());
                 preparedStatement.setString(5, person.getEmail());
                 preparedStatement.setString(6, person.getImageURL());
                 int row = preparedStatement.executeUpdate();
@@ -176,12 +176,12 @@ public class DbConnectivityClass {
             connectToDatabase();
             try {
                 Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
-                String sql = "UPDATE users SET first_name=?, last_name=?, department=?, major=?, email=?, imageURL=? WHERE id=?";
+                String sql = "UPDATE users SET first_name=?, last_name=?, typeOfLicense=?, typeOfAircraft=?, email=?, imageURL=? WHERE id=?";
                 PreparedStatement preparedStatement = conn.prepareStatement(sql);
                 preparedStatement.setString(1, p.getFirstName());
                 preparedStatement.setString(2, p.getLastName());
-                preparedStatement.setString(3, p.getDepartment());
-                preparedStatement.setString(4, p.getMajor());
+                preparedStatement.setString(3, p.getTypeOfLicense());
+                preparedStatement.setString(4, p.getTypeOfAircraft());
                 preparedStatement.setString(5, p.getEmail());
                 preparedStatement.setString(6, p.getImageURL());
                 preparedStatement.setInt(7, id);

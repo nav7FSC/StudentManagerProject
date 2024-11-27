@@ -43,7 +43,7 @@ public class DB_GUI_Controller implements Initializable {
     @FXML
     ProgressBar progressBar;
     @FXML
-    TextField first_name, last_name, department, major, email, imageURL;
+    TextField first_name, last_name, typeOfLicense, typeOfAircraft, email, imageURL;
     @FXML
     ImageView img_view;
     @FXML
@@ -57,7 +57,7 @@ public class DB_GUI_Controller implements Initializable {
     @FXML
     private MenuItem editItem, deleteItem;
     @FXML
-    private TableColumn<Person, String> tv_fn, tv_ln, tv_department, tv_major, tv_email;
+    private TableColumn<Person, String> tv_fn, tv_ln, tv_typeOfLicense, tv_typeofAircraft, tv_email;
     private final DbConnectivityClass cnUtil = new DbConnectivityClass();
     private final ObservableList<Person> data = cnUtil.getData();
 
@@ -68,8 +68,8 @@ public class DB_GUI_Controller implements Initializable {
             tv_id.setCellValueFactory(new PropertyValueFactory<>("id"));
             tv_fn.setCellValueFactory(new PropertyValueFactory<>("firstName"));
             tv_ln.setCellValueFactory(new PropertyValueFactory<>("lastName"));
-            tv_department.setCellValueFactory(new PropertyValueFactory<>("department"));
-            tv_major.setCellValueFactory(new PropertyValueFactory<>("major"));
+            tv_typeOfLicense.setCellValueFactory(new PropertyValueFactory<>("typeOfLicense"));
+            tv_typeofAircraft.setCellValueFactory(new PropertyValueFactory<>("typeOfAircraft"));
             tv_email.setCellValueFactory(new PropertyValueFactory<>("email"));
             tv.setItems(data);
 
@@ -83,8 +83,8 @@ public class DB_GUI_Controller implements Initializable {
             addBtn.disableProperty().bind(
                     Bindings.isEmpty(first_name.textProperty())
                             .or(Bindings.isEmpty(last_name.textProperty()))
-                            .or(Bindings.isEmpty(department.textProperty()))
-                            .or(Bindings.isEmpty(major.textProperty()))
+                            .or(Bindings.isEmpty(typeOfLicense.textProperty()))
+                            .or(Bindings.isEmpty(typeOfAircraft.textProperty()))
                             .or(Bindings.isEmpty(email.textProperty()))
                             .or(Bindings.isEmpty(imageURL.textProperty()))
             );
@@ -98,8 +98,8 @@ public class DB_GUI_Controller implements Initializable {
     @FXML
     protected void addNewRecord() {
 
-        Person p = new Person(first_name.getText(), last_name.getText(), department.getText(),
-                major.getText(), email.getText(), imageURL.getText());
+        Person p = new Person(first_name.getText(), last_name.getText(), typeOfLicense.getText(),
+                typeOfAircraft.getText(), email.getText(), imageURL.getText());
         cnUtil.insertUser(p);
         cnUtil.retrieveId(p);
         p.setId(cnUtil.retrieveId(p));
@@ -112,8 +112,8 @@ public class DB_GUI_Controller implements Initializable {
     protected void clearForm() {
         first_name.clear();
         last_name.clear();
-        department.clear();
-        major.clear();
+        typeOfLicense.clear();
+        typeOfAircraft.clear();
         email.clear();
         imageURL.clear();
         tv.getSelectionModel().clearSelection();
@@ -155,8 +155,8 @@ public class DB_GUI_Controller implements Initializable {
     protected void editRecord() {
         Person p = tv.getSelectionModel().getSelectedItem();
         int index = data.indexOf(p);
-        Person p2 = new Person(index + 1, first_name.getText(), last_name.getText(), department.getText(),
-                major.getText(), email.getText(), imageURL.getText());
+        Person p2 = new Person(index + 1, first_name.getText(), last_name.getText(), typeOfLicense.getText(),
+                typeOfAircraft.getText(), email.getText(), imageURL.getText());
         cnUtil.editUser(p.getId(), p2);
         data.remove(p);
         data.add(index, p2);
@@ -194,8 +194,8 @@ public class DB_GUI_Controller implements Initializable {
         if (p != null) {
             first_name.setText(p.getFirstName());
             last_name.setText(p.getLastName());
-            department.setText(p.getDepartment());
-            major.setText(p.getMajor());
+            typeOfLicense.setText(p.getTypeOfLicense());
+            typeOfAircraft.setText(p.getTypeOfAircraft());
             email.setText(p.getEmail());
             imageURL.setText(p.getImageURL());
         } else {
@@ -239,9 +239,9 @@ public class DB_GUI_Controller implements Initializable {
         TextField textField1 = new TextField("Name");
         TextField textField2 = new TextField("Last Name");
         TextField textField3 = new TextField("Email ");
-        ObservableList<Major> options =
-                FXCollections.observableArrayList(Major.values());
-        ComboBox<Major> comboBox = new ComboBox<>(options);
+        ObservableList<Aircraft> options =
+                FXCollections.observableArrayList(Aircraft.values());
+        ComboBox<Aircraft> comboBox = new ComboBox<>(options);
         comboBox.getSelectionModel().selectFirst();
         dialogPane.setContent(new VBox(8, textField1, textField2, textField3, comboBox));
         Platform.runLater(textField1::requestFocus);
@@ -255,7 +255,7 @@ public class DB_GUI_Controller implements Initializable {
         Optional<Results> optionalResult = dialog.showAndWait();
         optionalResult.ifPresent((Results results) -> {
             MyLogger.makeLog(
-                    results.fname + " " + results.lname + " " + results.major);
+                    results.fname + " " + results.lname + " " + results.typeOfAircraft);
         });
     }
 
@@ -289,18 +289,18 @@ public class DB_GUI_Controller implements Initializable {
     }
 
 
-    private static enum Major {Business, CSC, CPIS}
+    private static enum Aircraft {Business, CSC, CPIS}
 
     private static class Results {
 
         String fname;
         String lname;
-        Major major;
+        Aircraft typeOfAircraft;
 
-        public Results(String name, String date, Major venue) {
+        public Results(String name, String date, Aircraft venue) {
             this.fname = name;
             this.lname = date;
-            this.major = venue;
+            this.typeOfAircraft = venue;
         }
     }
 
